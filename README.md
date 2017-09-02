@@ -5,7 +5,7 @@ Docker image with nginx + rtmp  module
 
 # Pulling docker image from docker hub
 1. Ensure you have [docker](https://www.docker.com) installed
-2. Type: `docker pull jcenzano/nginx-rtmp`
+2. Type: `docker pull jcenzano/docker-nginx-rtmp`
 
 # Creating the docker image locally (optional)
 1. Ensure you have docker [docker](https://www.docker.com) and make installed
@@ -13,7 +13,7 @@ Docker image with nginx + rtmp  module
 
 # Testing the image
 You can test the rtmp server included in this image doing the following:
-1. Run the docker as a daemon: `docker run --rm -itd -p 1935:1935 jcenzano/nginx-rtmp`
+1. Run the docker as a daemon: `docker run --rm -itd -p 1935:1935 jcenzano/docker-nginx-rtmp`
 2. Create a RTMP stream against the container, you can use ffmpeg for that:
 ```
 #Streams 30s of live test stream to rtmp://localhost:1935/live/test
@@ -30,4 +30,4 @@ ffmpeg -f lavfi -re \
 ffmpeg -i rtmp://localhost:1935/live/test -codec copy -f flv test.flv
 ```
 
-Note: If you have problems installing ffmpeg locally you can use this ffmpeg containerized: [jcenzano/ffmpeg](https://github.com/jordicenzano/docker-ffmpeg)
+Note: If you have problems installing ffmpeg locally you can use this ffmpeg containerized: [jcenzano/docker-ffmpeg](https://github.com/jordicenzano/docker-ffmpeg)
